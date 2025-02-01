@@ -43,11 +43,16 @@ class TelegramController extends Controller
             if (!$user) {
                 $user = User::create($userData);
             }
-
+            if ($user->role === 'admin') {
+                $route =route('admin.dashboard');
+            }
+            else{
+                $route=route('home');
+            }
             Auth::login($user);
             return response()->json([
                 'message' => 'Logged in via Telegram',
-                'redirect' => route('home'),
+                'redirect' => $route,
                 'user' => $user
             ], 200);
     }
