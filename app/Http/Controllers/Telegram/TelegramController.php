@@ -34,10 +34,9 @@ class TelegramController extends Controller
             $user = User::where('phone', $request->phone)->first();
             $userWithTgId = User::where('tg_id', $request->tg_id)->first();
 
-            if ($userWithTgId && $userWithTgId->phone !== $request->phone) {
-
+            if ($userWithTgId &&( $userWithTgId->phone !== $request->phone)) {
                 return response()->json([
-                    'message' => 'Телефон вже прив`язаний до цього акаунту телеграм',
+                    'message' => 'До цього акаунту телеграм вже прив`язаний якийсь телефон',
                 ], 400);
             }
 
