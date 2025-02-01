@@ -23,6 +23,11 @@
                 <button id="button_submit" type="submit" class="btn btn-primary btn-block">{{ __('Sign In') }}</button>
             </div>
         </div>
+        <div class="row">
+            <div class="col-12 mt-3 d-flex justify-content-center  align-items-center">
+                <a href="/">Пропустити</a>
+            </div>
+        </div>
 
         <div id="errors" style="display: none;"></div>
     </div>
