@@ -30,7 +30,8 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
     'search'=>[
-        'enabled'=>env('ELASTICSEARCH_ENABLED',false),
-        'hosts'=>explode(',',env('ELASTICSEARCH_HOSTS','localhost:9200'))
+        'enabled' => env('ELASTICSEARCH_ENABLED', false),
+        'hosts' => explode(',', env('ELASTICSEARCH_HOSTS', 'localhost:9200')),
+        'api_key' => env('ELASTICSEARCH_API_KEY', null),
     ]
 ];

@@ -27,15 +27,14 @@ class LoginController extends Controller
         }
 
         if ($user->role === 'admin') {
-            Auth::login($user);
             return redirect()->route('admin.dashboard');
         }
-
-        return back()->withErrors(['phone' => ' You are not admin']);
+        Auth::login($user);
+        return redirect()->route('home');
     }
     public function logout()
     {
         Auth::logout();
-        return redirect()->route('login');
+        return redirect()->route('home');
     }
 }

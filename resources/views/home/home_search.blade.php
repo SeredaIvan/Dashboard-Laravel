@@ -1,7 +1,15 @@
 @include('head.head_doc')
 <body>
-<header class="bg-dark text-white py-3">
-    @include('search.search_form')
+<header class="bg-dark text-white  align-self-center">
+    <div class="row">
+        <div class="col-4 d-flex justify-content-center align-items-center">
+            <a class="text-white" href="/">Home page</a>
+        </div>
+        <div class="col-8">
+            @include('search.search_form')
+        </div>
+    </div>
+
 </header>
 @if(!empty($locations) && count($locations) > 0)
     <div class="album py-5 bg-light">
@@ -29,7 +37,7 @@
         </div>
     </div>
 @else
-    <div class="d-flex justify-content-center">
+    <div class="d-flex justify-content-center m-3">
         <p>Нічого не знайдено</p>
     </div>
 @endif
