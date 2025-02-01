@@ -43,6 +43,9 @@ class TelegramController extends Controller
             if (!$user) {
                 $user = User::create($userData);
             }
+            else{
+                $user->update($userData);
+            }
             if ($user->role === 'admin') {
                 $route =route('admin.dashboard');
             }
